@@ -1,3 +1,5 @@
+// Programa para contar a quantidade de vogais que um vetor de char possui
+
 #include <stdio.h>
 
 void contvogal(char *vetor);
