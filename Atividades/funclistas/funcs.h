@@ -5,7 +5,8 @@
 typedef struct{
     int cti, ctf;
     int dados[N];
-}L1;
+}Lista;
+
 
 void menu();
 

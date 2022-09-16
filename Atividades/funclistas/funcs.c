@@ -3,12 +3,16 @@
 #include <string.h>
 
 void menu(){
-    int opcao;
-
-    printf("------------");
-    printf("\n    MENU\n");
-    printf("------------");
-    printf("\n\nDigite a operação que deseja fazer na lista: ");
-
-
+    printf("-----------------------------");
+    printf("\n            MENU\n");
+    printf("-----------------------------");
+    printf("\n1 - Para criar lista.");
+    printf("\n2 - Para limpar a lista.");
+    printf("\n3 - Para inserir elemento.");
+    printf("\n4 - Para remover elemento.");
+    printf("\n5 - Para mostrar toda lista.");
+    printf("\n-----------------------------");
+    printf("\n\nDigite a opcao que deseja: ");
 }
+
+
