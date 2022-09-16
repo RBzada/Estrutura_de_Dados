@@ -4,6 +4,8 @@
 
 int main(){
     int opcao;
+    Lista l1;
+
     menu();
     scanf("%d", &opcao);
 
@@ -13,5 +15,7 @@ int main(){
         scanf("%d", &opcao);
     }
 
+    criar_lista(&l1);
     return 0;
+
 }

@@ -10,4 +10,6 @@ typedef struct{
 
 void menu();
 
+void criar_lista(Lista *l);
+
 #endif

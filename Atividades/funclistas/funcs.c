@@ -15,4 +15,8 @@ void menu(){
     printf("\n\nDigite a opcao que deseja: ");
 }
 
+void criar_lista(Lista *l){
+    l->cti = -1;
+    l->ctf = -1;
+}
 
