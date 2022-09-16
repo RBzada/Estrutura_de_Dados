@@ -14,7 +14,7 @@ void criar_lista(Lista *l);
 
 void limpar_lista(Lista *l);
 
-void inserir_inicio(Lista *l);
+void inserir_inicio(Lista *l, int elemento);
 
 void inserir_fim(Lista *l);
 

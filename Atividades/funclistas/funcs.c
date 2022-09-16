@@ -12,7 +12,7 @@ void menu(){
     printf("\n4 - Para remover elemento.");
     printf("\n5 - Para mostrar toda lista.");
     printf("\n-----------------------------");
-    printf("\n\nDigite a opcao que deseja: ");
+    printf("\nDigite a opcao que deseja: ");
 }
 
 void criar_lista(Lista *l){
@@ -23,5 +23,25 @@ void criar_lista(Lista *l){
 void limpar_lista(Lista *l){
     l->cti = -1;
     l->ctf = -1;
+}
+
+void inserir_inicio(Lista *l, int elemento){
+    if (l->cti == 0){
+        l->cti = 5;
+    }
+    else if(l->cti == -1){
+        l->cti += 1;
+    }
+    else{
+        l->cti -= 1;
+    }
+
+    if (l->ctf == -1){
+        l->ctf = 0;
+    }
+    
+
+    l->dados[l->cti] = elemento;
+
 }
 
