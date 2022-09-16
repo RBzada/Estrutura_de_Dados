@@ -20,3 +20,8 @@ void criar_lista(Lista *l){
     l->ctf = -1;
 }
 
+void limpar_lista(Lista *l){
+    l->cti = -1;
+    l->ctf = -1;
+}
+

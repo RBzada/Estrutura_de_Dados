@@ -12,4 +12,6 @@ void menu();
 
 void criar_lista(Lista *l);
 
+void limpar_lista(Lista *l);
+
 #endif

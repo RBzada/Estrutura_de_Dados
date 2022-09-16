@@ -14,8 +14,15 @@ int main(){
         printf("\n\nDigite novamente a opcao que deseja: ");
         scanf("%d", &opcao);
     }
+    
+    if (opcao == 1){
+        criar_lista(&l1);
+    }
+    else if (opcao == 2){
+        limpar_lista(&l1);
+    }
+    
 
-    criar_lista(&l1);
     return 0;
 
 }
