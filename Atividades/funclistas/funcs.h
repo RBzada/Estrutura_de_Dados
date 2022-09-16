@@ -14,4 +14,14 @@ void criar_lista(Lista *l);
 
 void limpar_lista(Lista *l);
 
+void inserir_inicio(Lista *l);
+
+void inserir_fim(Lista *l);
+
+void remover_inicio(Lista *l);
+
+void remover_fim(Lista *l);
+
+void mostrar_lista(Lista *l);
+
 #endif
