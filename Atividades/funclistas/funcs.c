@@ -44,3 +44,9 @@ void inserir_inicio(Lista *l, int elemento){
 
 }
 
+void mostrar_lista(Lista  *l){
+    for (int i = l->cti; i < l->ctf; i++){
+        printf("\n%d", l->dados[i]);
+    }
+}
+
