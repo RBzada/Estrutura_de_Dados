@@ -9,7 +9,7 @@ int main(){
     menu();
     scanf("%d", &opcao);
 
-    while (opcao < 1 || opcao > 5){
+    while (opcao < 1 || opcao > 4){
         printf("Codigo inexistente.");
         printf("\n\nDigite novamente a opcao que deseja: ");
         scanf("%d", &opcao);
@@ -18,12 +18,13 @@ int main(){
 
     criar_lista(&l1);
 
-    if (opcao == 2){
+    if (opcao == 1){
         limpar_lista(&l1);
+        printf("\nLista limpada com sucesso!");
     }
     
 
-    else if(opcao == 3){
+    else if(opcao == 2){
         int continuar = 1;
         while (continuar == 1){
             if ((l1.ctf - l1.cti) == 1 || (l1.ctf - l1.cti) == -1){ // Descubrir como saber quando a lista está cheio
