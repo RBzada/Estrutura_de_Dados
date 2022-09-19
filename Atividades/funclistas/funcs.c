@@ -26,7 +26,7 @@ void limpar_lista(Lista *l){
 
 void inserir_inicio(Lista *l, int elemento){
     if (l->cti == 0){
-        l->cti = 5;
+        l->cti = N;
     }
     else if(l->cti == -1){
         l->cti += 1;
@@ -44,9 +44,34 @@ void inserir_inicio(Lista *l, int elemento){
 
 }
 
-void mostrar_lista(Lista  *l){
-    for (int i = l->cti; i < l->ctf; i++){
-        printf("\n%d", l->dados[i]);
+void mostrar_lista(Lista* l){
+    if(l -> cti == l->ctf){
+        printf("%d", l->dados[0]);
+    }
+    else if(l->cti == 1 && l->ctf == 0){
+        int contagem = 0;
+        for (int i = l->cti; i != (l->ctf); i++){
+            contagem++;
+            if (i == N){
+                printf(" %d", l->dados[i]);
+                i = 0;
+            }
+
+            printf(" %d", l->dados[i]);
+            if (contagem == N){
+                break;
+            }
+        }
+    }
+    else{
+        for (int i = l->cti; i != (l->ctf + 1); i++){
+            if (i == N){
+                printf(" %d", l->dados[i]);
+                i = 0;
+            }
+
+            printf(" %d", l->dados[i]);
+        }
     }
 }
 
