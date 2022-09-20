@@ -72,10 +72,16 @@ int main(){
                     printf("-------------------------------------");
                 }
 
-            // Fazer uma validação do continuar
-            printf("\nDeseja continuar inserindo elementos(1 para sim e 0 para nao): ");
-            scanf("%d", &continuar);
-            printf("\n-----------------------------------------------------------------");
+                // Fazer uma validação do continuar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                printf("\nDeseja continuar inserindo elementos(1 para sim e 0 para nao): ");
+                scanf("%d", &continuar);
+                printf("\n-----------------------------------------------------------------");
+                while (continuar != 0 && continuar != 1){
+                    printf("Opção inválida! Tente novamente.");
+                    printf("\nDeseja continuar inserindo elementos(1 para sim e 0 para nao): ");
+                    scanf("%d", &continuar);
+                    printf("\n-----------------------------------------------------------------");
+            }
             }
         }
         printf("\nA lista ficou: "); 
