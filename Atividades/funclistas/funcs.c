@@ -94,6 +94,13 @@ void mostrar_lista(Lista* l){
         }
     }
 
+    // Caso cti seja menor que ctf e ctf seja N
+    else if(l->cti < N && l->ctf == N){
+        for (int i = l->cti; i < (N + 1); i++){
+            printf(" %d", l->dados[i]);
+        }
+    }
+
     // Caso cti seja a soma de ctf + 1 (lista cheia)
     else if(l->cti == l->ctf + 1){
         int ctiaux;
