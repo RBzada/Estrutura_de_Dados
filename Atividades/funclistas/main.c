@@ -20,7 +20,7 @@ int main(){
     // Criando lista
     criar_lista(&l1);
 
-    // Chamando função para cirar lista
+    // Chamando função para limpar lista
     if (opcao == 1){
         limpar_lista(&l1);
         printf("\nLista limpada com sucesso!");
@@ -29,13 +29,16 @@ int main(){
     // Funções para inserir elemento no inicio ou no final
     else if(opcao == 2){
         int continuar = 1;
-        int cont = 0;
 
         // Variável "continuar" pergunta se a pessoa deseja continuar inserindo elemento
         while (continuar == 1){
-            if ((l1.ctf - l1.cti) == 1 || (l1.ctf - l1.cti) == -1){ // Descubrir quando a lista está cheio
+            if (l1.cti == l1.ctf + 1){ // Verificar se a lista está cheia
                 printf("\nA lista esta cheia! Nao foi possivel continuar.");
-                return 0;
+                break;
+            }
+            else if(l1.cti == 0 && l1.ctf == N){
+                printf("\nA lista esta cheia! Nao foi possivel continuar.");
+                break;
             }
             else{
                 int posicao, elemento;
@@ -53,21 +56,32 @@ int main(){
                 }
                 printf("-------------------------------------");
 
+                // Inserir elemento no começo
                 if (posicao == 1){
-                    cont++;
                     printf("\nQual elemento voce deseja inserir: ");
                     scanf("%d", &elemento);
                     inserir_inicio(&l1, elemento);
                     printf("-------------------------------------");
                 }
-            }
 
+                // Inserir elemento no final
+                else if (posicao == 2){
+                    printf("\nQual elemento voce deseja inserir: ");
+                    scanf("%d", &elemento);
+                    inserir_fim(&l1, elemento);
+                    printf("-------------------------------------");
+                }
+
+            // Fazer uma validação do continuar
             printf("\nDeseja continuar inserindo elementos(1 para sim e 0 para nao): ");
             scanf("%d", &continuar);
             printf("\n-----------------------------------------------------------------");
+            }
         }
+        printf("\nA lista ficou: "); 
+        mostrar_lista(&l1);
+        printf("\nO cti: %d e o ctf: %d", l1.cti, l1.ctf);
     }
 
     return 0;
-
 }
