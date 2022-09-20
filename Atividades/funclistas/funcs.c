@@ -44,6 +44,26 @@ void inserir_inicio(Lista *l, int elemento){
 
 }
 
+
+void inserir_fim(Lista *l, int elemento){
+    if(l->ctf == N){
+        l->ctf = 0;
+    }
+    else if(l->ctf == -1){
+        l->ctf += 1;
+    }
+    else{
+        l->ctf += 1;
+    }
+
+    if (l->cti == -1){
+        l->cti = 0;
+    }
+
+    l->dados[l->ctf] = elemento;
+
+}
+
 void mostrar_lista(Lista* l){
     if(l -> cti == l->ctf){
         printf("%d", l->dados[0]);
