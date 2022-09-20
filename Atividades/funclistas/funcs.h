@@ -16,7 +16,7 @@ void limpar_lista(Lista *l);
 
 void inserir_inicio(Lista *l, int elemento);
 
-void inserir_fim(Lista *l);
+void inserir_fim(Lista *l, int elemento);
 
 void remover_inicio(Lista *l);
 
