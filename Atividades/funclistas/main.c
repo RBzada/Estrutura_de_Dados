@@ -9,7 +9,7 @@ int main(){
     menu();
     scanf("%d", &opcao);
 
-    // Verificando se o código inserido é válido
+    // Verificando se a opção inserida é válida
     while (opcao < 1 || opcao > 4){
         printf("Codigo inexistente.");
         printf("\n\nDigite novamente a opcao que deseja: ");
@@ -72,22 +72,24 @@ int main(){
                     printf("-------------------------------------");
                 }
 
-                // Fazer uma validação do continuar!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 printf("\nDeseja continuar inserindo elementos(1 para sim e 0 para nao): ");
                 scanf("%d", &continuar);
                 printf("\n-----------------------------------------------------------------");
+
+                // Validação da opção continuar
                 while (continuar != 0 && continuar != 1){
                     printf("Opção inválida! Tente novamente.");
                     printf("\nDeseja continuar inserindo elementos(1 para sim e 0 para nao): ");
                     scanf("%d", &continuar);
                     printf("\n-----------------------------------------------------------------");
-            }
+                }
             }
         }
-        printf("\nA lista ficou: "); 
-        mostrar_lista(&l1);
-        printf("\nO cti: %d e o ctf: %d", l1.cti, l1.ctf);
     }
+
+    printf("\nA lista ficou: "); 
+    mostrar_lista(&l1);
+    printf("\nO cti: %d e o ctf: %d", l1.cti, l1.ctf);
 
     return 0;
 }
