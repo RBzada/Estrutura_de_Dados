@@ -64,10 +64,23 @@ void inserir_fim(Lista *l, int elemento){
 
 }
 
+void remover_inicio(Lista *l){
+    if (l->cti == l->ctf){
+        l->cti = -1;
+        l->ctf = -1;
+    }
+    if (l->cti == 5){
+        l->cti = 0;
+    }
+    else{
+        l->cti += 1;
+    }
+}
+
 void mostrar_lista(Lista* l){
     // Caso o cti e o ctf sejam iguais
     if(l -> cti == l->ctf){ 
-        printf("%d", l->dados[0]);
+        printf("%d", l->dados[l->cti]);
     }
 
     // Caso cti seja 1 e ctf seja 0   
