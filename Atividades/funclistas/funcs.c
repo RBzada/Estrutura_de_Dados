@@ -65,9 +65,12 @@ void inserir_fim(Lista *l, int elemento){
 }
 
 void mostrar_lista(Lista* l){
-    if(l -> cti == l->ctf){
+    // Caso o cti e o ctf sejam iguais
+    if(l -> cti == l->ctf){ 
         printf("%d", l->dados[0]);
     }
+
+    // Caso cti seja 1 e ctf seja 0   
     else if(l->cti == 1 && l->ctf == 0){
         int contagem = 0;
         for (int i = l->cti; i != (l->ctf); i++){
@@ -83,6 +86,29 @@ void mostrar_lista(Lista* l){
             }
         }
     }
+
+    // Caso cti seja 0 e ctf seja N
+    else if(l->cti == 0 && l->ctf == N){
+        for (int i = 0; i < (N + 1); i++){
+            printf(" %d", l->dados[i]);
+        }
+    }
+
+    // Caso cti seja a soma de ctf + 1 (lista cheia)
+    else if(l->cti == l->ctf + 1){
+        int ctiaux;
+        ctiaux = l->cti;
+        for (int i = 0; i < N; i++){
+            printf("%d ", l->dados[ctiaux]);
+            if (ctiaux == N){
+                ctiaux = 0;
+                printf("%d ", l->dados[ctiaux]);
+            }
+            
+            ctiaux++;
+        }    
+    }
+
     else{
         for (int i = l->cti; i != (l->ctf + 1); i++){
             if (i == N){
