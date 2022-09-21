@@ -50,8 +50,11 @@ int main(){
                 printf("\nDigite a opcao que deseja: ");
                 scanf("%d", &posicao);
                 while (posicao < 1 || posicao > 2){
-                    printf("Codigo inexistente.");
-                    printf("\n\nDigite novamente a opcao que deseja: ");
+                    printf("\nCodigo inexistente.\n");
+                    printf("\n1 - Para colocar no inicio.");
+                    printf("\n2 - Para colocar no final.");    
+                    printf("\n-----------------------------");
+                    printf("\nDigite novamente a opcao que deseja: ");
                     scanf("%d", &posicao);
                 }
                 printf("-------------------------------------");
@@ -86,10 +89,70 @@ int main(){
             }
         }
     }
+    
+    else if(opcao == 3){
+        int continuar = 1;
+        l1.cti = 2;
+        l1.ctf = 5;
 
-    printf("\nA lista ficou: "); 
-    mostrar_lista(&l1);
-    printf("\nO cti: %d e o ctf: %d", l1.cti, l1.ctf);
+        for (int i = 0; i < 6; i++){
+            l1.dados[i] = i;
+        }
+        
+
+        // Variável "continuar" pergunta se a pessoa deseja continuar inserindo elemento
+        while (continuar == 1){
+            if (l1.cti == -1  && l1.ctf == -1){ // Verificar se a lista está vazia
+                printf("\nA lista esta vazia! Nao foi possivel continuar.");
+                printf("\n-----------------------------------------------");
+                break;
+            }
+            else{
+                int posicao, elemento;
+
+                printf("\nEscolha uma opcao:\n");
+                printf("\n1 - Para remover do inicio.");
+                printf("\n2 - Para remover no final.");    
+                printf("\n-----------------------------");
+                printf("\nDigite a opcao que deseja: ");
+                scanf("%d", &posicao);
+                while (posicao < 1 || posicao > 2){
+                    printf("Codigo inexistente.\n");
+                    printf("\n1 - Para remover do inicio.");
+                    printf("\n2 - Para remover no final.");    
+                    printf("\n-----------------------------");
+                    printf("\n\nDigite novamente a opcao que deseja: ");
+                    scanf("%d", &posicao);
+                }
+                printf("----------------------------");
+
+                // Inserir elemento no começo
+                if (posicao == 1){
+                    remover_inicio(&l1);
+                    printf("-------------------------------------");
+                }
+
+                printf("\nDeseja continuar removendo elementos(1 para sim e 0 para nao): ");
+                scanf("%d", &continuar);
+                printf("-----------------------------------------------------------------");
+
+                // Validação da opção continuar
+                while (continuar != 0 && continuar != 1){
+                    printf("\nOpcao invalida! Tente novamente.");
+                    printf("\nDeseja continuar removendo elementos(1 para sim e 0 para nao): ");
+                    scanf("%d", &continuar);
+                    printf("\n-----------------------------------------------------------------");
+                }
+            }
+        }
+    }
+
+    
+    if (l1.ctf != -1 && l1.cti != -1){
+        printf("\nA lista ficou: ");
+        mostrar_lista(&l1);
+        printf("\nCTI %d    CTF %d", l1.cti, l1.ctf);
+    }    
 
     return 0;
 }
