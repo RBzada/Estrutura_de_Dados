@@ -69,7 +69,7 @@ void remover_inicio(Lista *l){
         l->cti = -1;
         l->ctf = -1;
     }
-    if (l->cti == 5){
+    else if (l->cti == N){
         l->cti = 0;
     }
     else{
