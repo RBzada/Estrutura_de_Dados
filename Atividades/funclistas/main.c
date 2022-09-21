@@ -89,16 +89,10 @@ int main(){
             }
         }
     }
-    
+
+    // Funções para remover elemento no inicio ou no final
     else if(opcao == 3){
         int continuar = 1;
-        l1.cti = 2;
-        l1.ctf = 5;
-
-        for (int i = 0; i < 6; i++){
-            l1.dados[i] = i;
-        }
-        
 
         // Variável "continuar" pergunta se a pessoa deseja continuar inserindo elemento
         while (continuar == 1){
