@@ -77,6 +77,19 @@ void remover_inicio(Lista *l){
     }
 }
 
+void remover_fim(Lista *l){
+    if (l->cti == l->ctf){
+        l->cti = -1;
+        l->ctf = -1;
+    }
+    else if (l->ctf == 0){
+        l->ctf = N;
+    }
+    else{
+        l->ctf -= 1;
+    }
+}
+
 void mostrar_lista(Lista* l){
     // Caso o cti e o ctf sejam iguais
     if(l -> cti == l->ctf){ 

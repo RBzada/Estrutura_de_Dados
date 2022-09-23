@@ -92,6 +92,13 @@ int main(){
 
     // Funções para remover elemento no inicio ou no final
     else if(opcao == 3){
+        for (int i = 0; i < 6; i++){
+            l1.dados[i] = i;
+        }
+
+        l1.cti = 0;
+        l1.ctf = 0;
+
         int continuar = 1;
 
         // Variável "continuar" pergunta se a pessoa deseja continuar inserindo elemento
@@ -120,7 +127,7 @@ int main(){
                 }
                 printf("----------------------------");
 
-                // Inserir elemento no começo
+                // Remover elemento no começo
                 if (posicao == 1){
                     remover_inicio(&l1);
                     printf("-------------------------------------");
