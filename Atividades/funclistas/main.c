@@ -154,6 +154,7 @@ int main(){
             mostrar_lista(&l1);
             printf("\nCTI %d    CTF %d", l1.cti, l1.ctf);
         }  
-
+    }
+    
     return 0;
 }
