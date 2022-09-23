@@ -147,12 +147,13 @@ int main(){
         }
     }
 
-    
-    if (l1.ctf != -1 && l1.cti != -1){
-        printf("\nA lista ficou: ");
-        mostrar_lista(&l1);
-        printf("\nCTI %d    CTF %d", l1.cti, l1.ctf);
-    }    
+    // Função para mostrar a lista
+    else if(opcao == 4){
+        if (l1.ctf != -1 && l1.cti != -1){
+            printf("\nA lista ficou: ");
+            mostrar_lista(&l1);
+            printf("\nCTI %d    CTF %d", l1.cti, l1.ctf);
+        }  
 
     return 0;
 }
