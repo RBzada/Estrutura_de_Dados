@@ -107,7 +107,7 @@ int main(){
         // Funções para remover elemento no inicio ou no final
         else if(opcao == 3){
             int continuar = 1;
-            
+
             // Variável "continuar" pergunta se a pessoa deseja continuar removendo elemento
             while (continuar == 1){
                 if (l1.cti == -1  && l1.ctf == -1){ // Verificar se a lista está vazia
@@ -178,7 +178,7 @@ int main(){
                 printf("\nA lista ficou: ");
                 mostrar_lista(&l1);
                 printf("\nCTI %d    CTF %d", l1.cti, l1.ctf);
-             printf("\n-----------------------------------------------");
+                printf("\n-----------------------------------------------");
             } 
             else{
                 printf("\nA lista esta vazia!");
