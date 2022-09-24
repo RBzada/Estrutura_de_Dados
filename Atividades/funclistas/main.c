@@ -17,7 +17,6 @@ int main(){
         // Verificando se a opção inserida é válida
         while (opcao < 1 || opcao > 4){
             printf("\nOpcao invalida! Tente novamente.\n");
-
             menu();
             scanf("%d", &opcao);
         }
@@ -48,19 +47,24 @@ int main(){
 
                     printf("\nEscolha uma opcao:\n");
                     printf("\n1 - Para colocar no inicio.");
-                    printf("\n2 - Para colocar no final.");    
+                    printf("\n2 - Para colocar no final."); 
+                    printf("\n3 - Sair.");   
                     printf("\n-----------------------------");
                     printf("\nDigite a opcao que deseja: ");
                     scanf("%d", &posicao);
-                    while (posicao < 1 || posicao > 2){
+
+                    while (posicao < 1 || posicao > 3){
+                        printf("-----------------------------------------");
                         printf("\nOpcao invalida! Tente novamente.\n");
                         printf("\n1 - Para colocar no inicio.");
-                        printf("\n2 - Para colocar no final.");    
-                        printf("\n-----------------------------");
+                        printf("\n2 - Para colocar no final.");   
+                        printf("\n3 - Para sair."); 
+                        printf("\n----------------------------------------");
                         printf("\nDigite novamente a opcao que deseja: ");
                         scanf("%d", &posicao);
                     }
-                    printf("-------------------------------------");
+
+                    printf("----------------------------------------");
 
                     // Inserir elemento no começo
                     if (posicao == 1){
@@ -76,6 +80,13 @@ int main(){
                         scanf("%d", &elemento);
                         inserir_fim(&l1, elemento);
                         printf("-------------------------------------");
+                    }
+
+                    // Sair para o menu
+                    else if(posicao == 3){
+                        printf("\nSaindo...\n");
+                        printf("----------------------------------------");
+                        break;
                     }
 
                     printf("\nDeseja continuar inserindo elementos(1 para sim e 0 para nao): ");
@@ -96,8 +107,13 @@ int main(){
         // Funções para remover elemento no inicio ou no final
         else if(opcao == 3){
             int continuar = 1;
+            for (int i = 0; i<6;i++){
+                l1.dados[i] = i;
+            }
+            l1.ctf = 5;
+            l1.cti = 0;
 
-            // Variável "continuar" pergunta se a pessoa deseja continuar inserindo elemento
+            // Variável "continuar" pergunta se a pessoa deseja continuar removendo elemento
             while (continuar == 1){
                 if (l1.cti == -1  && l1.ctf == -1){ // Verificar se a lista está vazia
                     printf("\nA lista esta vazia! Nao foi possivel continuar.");
@@ -109,30 +125,41 @@ int main(){
 
                     printf("\nEscolha uma opcao:\n");
                     printf("\n1 - Para remover do inicio.");
-                    printf("\n2 - Para remover no final.");    
+                    printf("\n2 - Para remover no final.");  
+                    printf("\n3 - Para sair."); 
                     printf("\n-----------------------------");
                     printf("\nDigite a opcao que deseja: ");
                     scanf("%d", &posicao);
-                    while (posicao < 1 || posicao > 2){
-                        printf("\nOpcao invalida! Tente novamente.");
+
+                    while (posicao < 1 || posicao > 3){
+                        printf("-----------------------------------------");
+                        printf("\nOpcao invalida! Tente novamente.\n");
                         printf("\n1 - Para remover do inicio.");
-                        printf("\n2 - Para remover no final.");    
-                        printf("\n-----------------------------");
-                        printf("\n\nDigite novamente a opcao que deseja: ");
+                        printf("\n2 - Para remover no final.");   
+                        printf("\n3 - Para sair."); 
+                        printf("\n-----------------------------------------");
+                        printf("\nDigite novamente a opcao que deseja: ");
                         scanf("%d", &posicao);
                     }
-                    printf("----------------------------");
+
+                    printf("-----------------------------------------");
 
                     // Remover elemento no começo
                     if (posicao == 1){
                         remover_inicio(&l1);
-                        printf("-------------------------------------");
+                        printf("------------------------");
                     }
 
-                    // Remover elemto do final
+                    // Remover elemento do final
                     else if (posicao == 2){
                         remover_fim(&l1);
-                        printf("-------------------------------------");
+                        printf("------------------------");
+                    }
+
+                    // Sair para o menu
+                    else if(posicao == 3){
+                        printf("\nSaindo...\n");
+                        break;
                     }
 
                     printf("\nDeseja continuar removendo elementos(1 para sim e 0 para nao): ");
@@ -144,7 +171,7 @@ int main(){
                         printf("\nOpcao invalida! Tente novamente.");
                         printf("\nDeseja continuar removendo elementos(1 para sim e 0 para nao): ");
                         scanf("%d", &continuar);
-                        printf("\n-----------------------------------------------------------------");
+                        printf("-----------------------------------------");
                     }
                 }
             }
@@ -166,13 +193,16 @@ int main(){
 
         printf("\nDeseja continuar fazendo operacoes na lista (1 para sim e 0 para nao): ");
         scanf("%d", &continuaroperacao);
-        printf("--------------------------------------------");
+        printf("-------------------------------------------------------------------------");
+        
         while (continuaroperacao < 0 || continuaroperacao > 1){
             printf("\nOpcao invalida! Tente novamente.");
             printf("\nDeseja continuar fazendo operacoes na lista (1 para sim e 0 para nao): ");
             scanf("%d", &continuaroperacao);
-
+            printf("-----------------------------------------------------------------------\n");
         }
+
+        printf("\n\n");
     }
 
     return 0;
