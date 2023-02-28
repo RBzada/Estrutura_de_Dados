@@ -1,4 +1,5 @@
-// Programa para calcular as raízes de uma equação do segundo grau
+// Programa para calcular as raízes de uma equação do segundo grau e 
+//armazená-las em variáveis localizadas no main
 
 #include <stdio.h>
 #include <math.h>
