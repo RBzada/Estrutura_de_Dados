@@ -23,10 +23,10 @@ int main(){
         if (num > 18){
             fprintf(arq1,"%s %d\n", nome, num);
         }
-        
     }
 
     fclose(arq);
     fclose(arq1);
+    
     return 0;
 }
