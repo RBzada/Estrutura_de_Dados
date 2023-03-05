@@ -20,7 +20,10 @@ int main(){
     fprintf(arq1,"%s %d\n", nome, num);
     while (!feof(arq)){
         fscanf(arq, "%s %d", nome, &num);
-        fprintf(arq1,"%s %d\n", nome, num);
+        if (num > 18){
+            fprintf(arq1,"%s %d\n", nome, num);
+        }
+        
     }
 
     fclose(arq);
