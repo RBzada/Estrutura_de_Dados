@@ -21,14 +21,12 @@ int main(){
 }
 
 void string_oposta(char *str){  
-    int diferenca = 0;
-
     for (int i = 0; i < strlen(str); i++){
-        if (str[i] >= 65 && str[i] <= 90){
-            str[i] = 90 - (str[i] - 65);
+        if (str[i] >= 65 && str[i] <= 90){ // Se, pela tabela ascii, o caracter estiver entre 65('A') e 90('Z') entra
+            str[i] = 90 - (str[i] - 65); // ultimo caracter da tabela ascii (90) menos a diferença do caracter pelo primeiro (65)
         }
-        else if (str[i] >= 97 && str[i] <= 122){
-            str[i] = 122 - (str[i] - 97);
+        else if (str[i] >= 97 && str[i] <= 122){ // Se, pela tabela ascii, o caracter estiver entre 97('a') e 122('z') entra
+            str[i] = 122 - (str[i] - 97); // ultimo caracter da tabela ascii (122) menos a diferença do caracter pelo primeiro (97)
         }
     }
 
