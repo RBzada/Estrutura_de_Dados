@@ -1,5 +1,5 @@
-// Criar uma estrutura que representa um vetor no espaço 3D e implementa uma que calcula o
-// produto escalar de dois vetores
+// Criar uma estrutura que representa um vetor no espaço 3D e implementa uma função que 
+// calcula o produto escalar de dois vetores
 
 #include <stdio.h>
 
