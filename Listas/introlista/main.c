@@ -6,6 +6,9 @@
 int main(){
     Lista l1;
 
+    menu();
+
+
     // Criando lista
     criar_lista(&l1);
 

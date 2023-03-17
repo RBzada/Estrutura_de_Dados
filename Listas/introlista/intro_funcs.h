@@ -24,4 +24,6 @@ int remove_inicio(Lista *l);
 
 int insere_inicio(Lista *l, int n);
 
+void menu();
+
 #endif
