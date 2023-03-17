@@ -20,4 +20,6 @@ int remove_fim(Lista *l);
 
 int insere_fim(Lista *l, int n);
 
+int remove_inicio(Lista *l);
+
 #endif
