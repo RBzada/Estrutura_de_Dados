@@ -42,6 +42,8 @@ int insere_fim(Lista *l, int n){
     else{
         l->controle++;
         l->dados[l->controle] = n;
+
+        return 1;
     }
 }
 
@@ -55,5 +57,23 @@ int remove_inicio(Lista *l){
         }
 
         l->controle--;
+
+        return 1;
+    }
+}
+
+int insere_inicio(Lista *l, int n){
+    if (l->controle == (N - 1)){
+        return 0;
+    }
+    else{
+        for (int i = l->controle; i > -1; i--){
+            l->dados[i+1] = l->dados[i];
+        }
+
+        l->dados[0] = n;
+        l->controle++;
+
+        return 1;
     }
 }
