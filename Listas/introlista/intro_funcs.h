@@ -18,4 +18,6 @@ void mostrar_lista(Lista *l);
 
 int remove_fim(Lista *l);
 
+int insere_fim(Lista *l, int n);
+
 #endif

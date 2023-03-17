@@ -14,13 +14,14 @@ int limpar_lista(Lista *l){
 }
 
 void mostrar_lista(Lista *l){
-    if (l->controle != -1){
-        for (int i = 0; i < N; i++){
-            printf("%d ", l[i]);
+    if (l->controle > -1){
+        printf("\n");
+        for (int i = 0; i < (l->controle + 1); i++){
+            printf("%d ", l->dados[i]);
         }
     }
     else{
-        printf("A lista esta vazia!");
+        printf("\nA lista esta vazia!");
     }
 }
 
@@ -31,5 +32,15 @@ int remove_fim(Lista *l){
     else{
         l->controle--;
         return 1;
+    }
+}
+
+int insere_fim(Lista *l, int n){
+    if (l->controle == (N - 1)){
+        return 0;
+    }
+    else{
+        l->controle++;
+        l->dados[l->controle] = n;
     }
 }
