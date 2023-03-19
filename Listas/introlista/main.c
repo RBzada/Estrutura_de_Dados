@@ -8,6 +8,11 @@ int main(){
     int opcao, continuaroperacao = 1;
 
     criar_lista(&l1);
+    for (int i = 0; i < N; i++){
+        l1.dados[i] = i;
+        l1.controle++;
+    }
+
 
     while(continuaroperacao == 1){
         menu();
@@ -28,75 +33,97 @@ int main(){
 
         else if(opcao == 2){
             // Inserindo elemento
-            int num, inserir;
-
-            printf("\nDigite o numero que deseja inserir: ");
-            scanf("%d", &num);
-            
-            printf("\nDigite onde deseja inserir o elemento(0 no comeco e 1 no final): ");
-            scanf("%d", &inserir);
-            while(inserir != 0 && inserir != 1){
-                // Enquanto o usuário não colocar 0 ou 1 fica num loop infinito
-                printf("\nOpcao invalida. Tente novamente\n\n");
+            int num, inserir, continuar = 1;
+            while(continuar == 1){     
+                printf("\nDigite o numero que deseja inserir: ");
+                scanf("%d", &num);
+                
                 printf("\nDigite onde deseja inserir o elemento(0 no comeco e 1 no final): ");
                 scanf("%d", &inserir);
-            }
+                while(inserir != 0 && inserir != 1){
+                    // Enquanto o usuário não colocar 0 ou 1 fica num loop infinito
+                    printf("\nOpcao invalida. Tente novamente\n\n");
+                    printf("\nDigite onde deseja inserir o elemento(0 no comeco e 1 no final): ");
+                    scanf("%d", &inserir);
+                }
 
-            if (inserir == 0){
-                // Inserindo no comeco
-                if (insere_inicio(&l1, num) == 1){
-                    printf("\nElemento inserido no inicio com sucesso!\n");
+                if (inserir == 0){
+                    // Inserindo no comeco
+                    if (insere_inicio(&l1, num) == 1){
+                        printf("\nElemento inserido no inicio com sucesso!\n");
+                    }
+                    else{
+                        printf("\nA lista esta cheia!\n");
+                    }
                 }
-                else{
-                    printf("\nA lista esta cheia!\n");
+                else if(inserir == 1){
+                    // Inserindo no final
+                    if (insere_fim(&l1, num) == 1){
+                        printf("\nElemento inserido no fim com sucesso!\n");
+                    }
+                    else{
+                        printf("\nA lista esta cheia!\n");
+                    }
                 }
-            }
-            else if(inserir == 1){
-                // Inserindo no final
-                if (insere_fim(&l1, num) == 1){
-                    printf("\nElemento inserido no fim com sucesso!\n");
-                }
-                else{
-                    printf("\nA lista esta cheia!\n");
-                }
-            }
 
-            /*ADICIONAR UM WHILE PARA QUE A FUNÇÃO POSSA SER CHAMADA VÁRIAS VEZES*/
+                printf("\nDeseja continuar inserindo elementos(1 para sim e 0 para nao): ");
+                scanf("%d", &continuar);
+                printf("-----------------------------------------------------------------");
+
+                // Validação da opção continuar
+                while (continuar != 0 && continuar != 1){
+                    printf("\nOpcao invalida! Tente novamente.");
+                    printf("\nDeseja continuar inserindo elementos(1 para sim e 0 para nao): ");
+                    scanf("%d", &continuar);
+                    printf("-----------------------------------------");
+                }
+            }
         }
 
         else if (opcao == 3){
             // Removendo elemento
-            int remover;
-            
-            printf("\nDigite de onde deseja remover o elemento(0 do comeco e 1 do final): ");
-            scanf("%d", &remover);
-            while(remover != 0 && remover != 1){
-                // Enquanto o usuário não colocar 0 ou 1 fica num loop infinito
-                printf("\nOpcao invalida. Tente novamente\n\n");
+            int remover, continuar = 1;
+            while(continuar == 1){
                 printf("\nDigite de onde deseja remover o elemento(0 do comeco e 1 do final): ");
                 scanf("%d", &remover);
-            }
+                while(remover != 0 && remover != 1){
+                    // Enquanto o usuário não colocar 0 ou 1 fica num loop infinito
+                    printf("\nOpcao invalida. Tente novamente\n\n");
+                    printf("\nDigite de onde deseja remover o elemento(0 do comeco e 1 do final): ");
+                    scanf("%d", &remover);
+                }
 
-            if (remover == 0){
-                // Removendo do comeco
-                if (remove_inicio(&l1) == 1){
-                    printf("\nElemento removido do inicio com sucesso!\n");
+                if (remover == 0){
+                    // Removendo do comeco
+                    if (remove_inicio(&l1) == 1){
+                        printf("\nElemento removido do inicio com sucesso!\n");
+                    }
+                    else{
+                        printf("\nA lista esta vazia!\n");
+                    }
                 }
-                else{
-                    printf("\nA lista esta vazia!\n");
+                else if(remover == 1){
+                    // Removendo no final
+                    if (remove_fim(&l1) == 1){
+                        printf("\nElemento removido do fim com sucesso!\n");
+                    }
+                    else{
+                        printf("\nA lista esta vazia!\n");
+                    }
                 }
-            }
-            else if(remover == 1){
-                // Removendo no final
-                if (remove_fim(&l1) == 1){
-                    printf("\nElemento removido do fim com sucesso!\n");
-                }
-                else{
-                    printf("\nA lista esta vazia!\n");
-                }
-            }
+                
+                printf("\nDeseja continuar removendo elementos(1 para sim e 0 para nao): ");
+                scanf("%d", &continuar);
+                printf("-----------------------------------------------------------------");
 
-            /*ADICIONAR UM WHILE PARA QUE A FUNÇÃO POSSA SER CHAMADA VÁRIAS VEZES*/
+                // Validação da opção continuar
+                while (continuar != 0 && continuar != 1){
+                    printf("\nOpcao invalida! Tente novamente.");
+                    printf("\nDeseja continuar removendo elementos(1 para sim e 0 para nao): ");
+                    scanf("%d", &continuar);
+                    printf("-----------------------------------------");
+                }
+            }
         }
 
         else if (opcao == 4){
