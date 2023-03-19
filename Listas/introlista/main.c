@@ -8,11 +8,6 @@ int main(){
     int opcao, continuaroperacao = 1;
 
     criar_lista(&l1);
-    for (int i = 0; i < N; i++){
-        l1.dados[i] = i;
-        l1.controle++;
-    }
-
 
     while(continuaroperacao == 1){
         menu();
@@ -25,7 +20,6 @@ int main(){
 
         if (opcao == 1){
             // Limpar lista
-
             if (limpar_lista(&l1) == 1){
                 printf("\nLista limpa com sucesso!");
             }
