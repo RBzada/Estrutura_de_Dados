@@ -1,11 +1,19 @@
 // Arquivo com todas as funções criadas
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "intro_funcs.h"
 
 int criar_lista(Lista *l){
     l->controle = -1;
-    return 1;
+    l->dados = (int *) malloc(l->tam * sizeof(int)); // na lista com o array dinâmico deve ser feito a solicitação de espaço em memória
+    
+    if (l->dados){ // Verificando se o pedido foi aceito
+        return 1; // Deu certo
+    }
+    else{
+        return 0; // Deu erro
+    }
 }
 
 int limpar_lista(Lista *l){
@@ -36,7 +44,7 @@ int remove_fim(Lista *l){
 }
 
 int insere_fim(Lista *l, int n){
-    if (l->controle == (N - 1)){
+    if (l->controle == (l->tam - 1)){
         return 0;
     }
     else{
@@ -63,7 +71,7 @@ int remove_inicio(Lista *l){
 }
 
 int insere_inicio(Lista *l, int n){
-    if (l->controle == (N - 1)){
+    if (l->controle == (l->tam - 1)){
         return 0;
     }
     else{
@@ -88,4 +96,9 @@ void menu(){
     printf("\n4 - Para mostrar toda lista.");
     printf("\n-----------------------------");
     printf("\nDigite a opcao que deseja: ");
+}
+
+int destrutor(Lista *l){
+    free(l);
+    return 1;
 }
