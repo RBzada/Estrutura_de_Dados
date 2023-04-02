@@ -14,4 +14,6 @@ void mostra_lista(struct no *ll);
 
 int inserir_inicio(struct no **ll, int num);
 
+int inserir_fim(struct no **ll, int num);
+
 #endif

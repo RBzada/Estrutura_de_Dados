@@ -42,3 +42,27 @@ int inserir_inicio(struct no **ll, int num){
     }
 }
 
+int inserir_fim(struct no **ll, int num){
+    struct no *nova, *aux;
+    nova = (struct no*) malloc(sizeof(struct no));
+
+    if (!nova){
+        return 0;
+    }
+    else{
+        // preenchendo
+        nova->valor = num;
+        nova->prox = 0;
+
+        aux = *ll;
+
+        if(aux){ // se aux != 0 (se é o primeiro)
+            for (;aux->prox != 0; aux = aux->prox);
+            
+            aux->prox = nova;
+        }
+        else{ // se a lista não possui elementos
+            *ll = nova;
+        }
+    }
+}
