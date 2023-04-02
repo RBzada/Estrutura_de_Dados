@@ -3,11 +3,13 @@
 #ifndef SIMPLES_FUNCS_H
 #define SIMPLES_FUNCS_H
 
-struct No{
+struct no{
     int valor;
-    struct No *prox;
+    struct no *prox;
 };
 
-int criar_lista(struct No **ll);
+int criar_lista(struct no **ll);
+
+void mostra_lista(struct no *ll);
 
 #endif
