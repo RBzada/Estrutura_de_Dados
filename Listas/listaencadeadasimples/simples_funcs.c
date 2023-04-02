@@ -15,10 +15,30 @@ void mostra_lista(struct no *ll){
 
     if (aux != 0){
         for (aux = ll; aux != 0; aux = aux->prox){
-            printf("%d ", aux->prox);
+            printf("%d ", aux->valor);
         }
     }
     else{
         printf("\nA lista esta vazia!");
     }
 }
+
+int inserir_inicio(struct no **ll, int num){
+    struct no *nova;
+    nova = (struct no*) malloc(sizeof(struct no));
+
+    if(!nova){ // não alocou
+        return 0;
+    }
+    else{
+        // preenchendo
+        nova->valor = num;
+        nova->prox = *ll;
+
+        // inserindo na lista
+        *ll = nova;
+
+        return 1;
+    }
+}
+
