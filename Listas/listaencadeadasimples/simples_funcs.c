@@ -75,4 +75,18 @@ int limpa_lista(struct no **ll){
         *ll = (*ll)->prox;
         free(sai);
     }   
+
+    return 1;
+}
+
+int remover_inicio(struct no **ll){
+    struct no *sai;
+
+    if(*ll){ // enquanto for diferente de 0
+        sai = *ll;
+        *ll = (*ll)->prox;
+        free(sai);
+    }   
+
+    return 1;
 }

@@ -18,4 +18,6 @@ int inserir_fim(struct no **ll, int num);
 
 int limpa_lista(struct no **ll);
 
+int remover_inicio(struct no **ll);
+
 #endif
