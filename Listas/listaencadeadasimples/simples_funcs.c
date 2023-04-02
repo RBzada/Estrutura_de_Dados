@@ -66,3 +66,13 @@ int inserir_fim(struct no **ll, int num){
         }
     }
 }
+
+int limpa_lista(struct no **ll){
+    struct no *sai;
+
+    while(*ll){ // enquanto for diferente de 0
+        sai = *ll;
+        *ll = (*ll)->prox;
+        free(sai);
+    }   
+}

@@ -16,4 +16,6 @@ int inserir_inicio(struct no **ll, int num);
 
 int inserir_fim(struct no **ll, int num);
 
+int limpa_lista(struct no **ll);
+
 #endif
