@@ -22,4 +22,6 @@ int remover_inicio(struct no **ll);
 
 int remover_fim(struct no **ll);
 
+int destrutor(struct no **ll);
+
 #endif

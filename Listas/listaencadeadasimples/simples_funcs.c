@@ -111,3 +111,8 @@ int remover_fim(struct no **ll){
 
     return 1;
 }
+
+int destrutor(struct no **ll){
+    free(ll);
+    return 1;
+}
