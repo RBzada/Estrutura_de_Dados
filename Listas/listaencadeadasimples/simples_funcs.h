@@ -8,6 +8,8 @@ struct no{
     struct no *prox;
 };
 
+void menu();
+
 int criar_lista(struct no **ll);
 
 void mostra_lista(struct no *ll);

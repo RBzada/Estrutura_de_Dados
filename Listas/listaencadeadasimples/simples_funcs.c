@@ -4,6 +4,19 @@
 #include <stdlib.h>
 #include "simples_funcs.h"
 
+
+void menu(){
+    printf("-----------------------------");
+    printf("\n            MENU\n");
+    printf("-----------------------------");
+    printf("\n1 - Para limpar a lista.");
+    printf("\n2 - Para inserir elemento.");
+    printf("\n3 - Para remover elemento.");
+    printf("\n4 - Para mostrar toda lista.");
+    printf("\n-----------------------------");
+    printf("\nDigite a opcao que deseja: ");
+}
+
 int criar_lista(struct no **ll){
     *ll = 0;
 
