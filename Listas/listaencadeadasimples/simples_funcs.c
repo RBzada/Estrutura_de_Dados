@@ -90,3 +90,24 @@ int remover_inicio(struct no **ll){
 
     return 1;
 }
+
+int remover_fim(struct no **ll){
+    struct no *sai, *aux;
+    
+    aux = *ll;
+
+    if(aux->prox == 0){
+        sai = aux;
+        *ll = 0;
+        free(sai);
+    }
+    else if(aux){
+        for(;aux->prox->prox != 0; aux = aux->prox);
+
+        sai = aux->prox;
+        aux->prox = 0;
+        free(sai);
+    }
+
+    return 1;
+}
