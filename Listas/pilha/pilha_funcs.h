@@ -13,7 +13,10 @@ int criar_pilha(struct Pilha **pp);
 
 void mostrar_topo(struct Pilha *pp);
 
-int inserir_inicio(struct Pilha **pp, int num);
+int inserir_topo(struct Pilha **pp, int num);
+
+int remover_topo(struct Pilha **pp);
+
 
 
 #endif
