@@ -50,3 +50,15 @@ int remover_topo(struct Pilha **pp){
 
     return 1;
 }
+
+struct Pilha *esvaziar_pilha(struct Pilha **pp){
+    struct Pilha *sai;
+
+    while(*pp){ // se for diferente de 0
+        sai = *pp;
+        *pp = (*pp)->prox;
+        free(sai);
+    }   
+
+    return 0;
+}

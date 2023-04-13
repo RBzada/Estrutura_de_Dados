@@ -17,6 +17,6 @@ int inserir_topo(struct Pilha **pp, int num);
 
 int remover_topo(struct Pilha **pp);
 
-
+struct Pilha *esvaziar_pilha(struct Pilha **pp);
 
 #endif
