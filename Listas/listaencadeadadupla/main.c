@@ -7,5 +7,7 @@ int main(){
     struct no *l;
 
     criar_lista(&l);
-    
+    inserir_inicio(&l, 9);
+    mostra_lista(l);
+
 }

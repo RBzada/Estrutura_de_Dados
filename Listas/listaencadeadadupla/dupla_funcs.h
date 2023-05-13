@@ -7,7 +7,7 @@ struct no{
     struct no *ant;
     int dado;
     struct no *prox;
-}*listai, *listaf;
+};
 
 void menu();
 

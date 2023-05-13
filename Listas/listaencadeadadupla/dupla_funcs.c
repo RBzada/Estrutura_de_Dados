@@ -25,7 +25,7 @@ int criar_lista(struct no **ll){
 void mostra_lista(struct no *ll){
     struct no *aux = ll;
 
-    if (aux != 0){
+    if (ll != 0){
         for (aux = ll; aux != 0; aux = aux->prox){
             printf("%d ", aux->dado);
         }
@@ -34,3 +34,17 @@ void mostra_lista(struct no *ll){
         printf("\nA lista esta vazia!");
     }
 }
+
+int inserir_inicio(struct no **ll, int num){
+    struct no *novo;
+
+    if (ll){
+        novo->ant = 0;
+        novo->dado = num;
+        novo->prox = ll;
+
+        *ll = novo;
+
+    }
+}
+
