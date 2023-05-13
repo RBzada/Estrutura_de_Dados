@@ -13,10 +13,10 @@ int criar_pilha(struct Pilha **pp){
 
 void mostrar_topo(struct Pilha *pp){
     if(pp){
-        printf("\nO topo: %d", pp->dado); // apenas o primeiro elemento por ser uma pilha
+        printf("\nO topo: %d\n", pp->dado); // apenas o primeiro elemento por ser uma pilha
     }   
     else{
-        printf("Lista vazia!");
+        printf("\nLista vazia!\n");
     }
 }
 
@@ -54,11 +54,23 @@ int remover_topo(struct Pilha **pp){
 struct Pilha *esvaziar_pilha(struct Pilha **pp){
     struct Pilha *sai;
 
-    while(*pp){ // se for diferente de 0
+    while(*pp){ // enquanto for diferente de 0
         sai = *pp;
         *pp = (*pp)->prox;
         free(sai);
     }   
 
-    return 0;
+    return 1;
+}
+
+void menu(){
+    printf("-----------------------------");
+    printf("\n            MENU\n");
+    printf("-----------------------------");
+    printf("\n1 - Para limpar a pilha");
+    printf("\n2 - Para inserir topo");
+    printf("\n3 - Para remover topo");
+    printf("\n4 - Para mostrar topo");
+    printf("\n-----------------------------");
+    printf("\nDigite a opcao que deseja: ");
 }

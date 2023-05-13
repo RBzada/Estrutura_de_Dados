@@ -9,6 +9,8 @@ struct Pilha{
     struct Pilha *prox;
 };
 
+void menu();
+
 int criar_pilha(struct Pilha **pp);
 
 void mostrar_topo(struct Pilha *pp);
