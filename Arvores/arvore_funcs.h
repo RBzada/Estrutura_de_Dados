@@ -8,8 +8,10 @@ struct no{
     struct no *esq, *dir;
 };
 
-int cria_arvore(struct no **a);
+struct no *cria_arvore(int valor, struct no *fesq, struct no *fdir);
 
+void mostra_arvore(struct no *raiz);
 
+int contanos(struct no *raiz);
 
 #endif
