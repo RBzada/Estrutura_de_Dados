@@ -14,4 +14,6 @@ void mostra_arvore(struct no *raiz);
 
 int contanos(struct no *raiz);
 
+struct no *insereno(struct no *raiz, int valor);
+
 #endif

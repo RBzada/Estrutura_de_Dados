@@ -28,5 +28,21 @@ void mostra_arvore(struct no *raiz){
 
 int contanos(struct no *raiz){
     if(!raiz) return 0;
-    return (1 + contano(raiz->esq) + contano(raiz->dir));
+    return (1 + contanos(raiz->esq) + contanos(raiz->dir));
+}
+
+struct no *insereno(struct no *raiz, int valor){
+    if(raiz){
+        if(valor > raiz->valor){
+            raiz->dir = insereno(raiz->dir, valor);
+        }
+        else{
+            raiz->esq = insereno(raiz->esq, valor);
+        }
+    }
+    else{
+        return cria_arvore(valor, 0, 0);
+    }
+
+    return (raiz);
 }
