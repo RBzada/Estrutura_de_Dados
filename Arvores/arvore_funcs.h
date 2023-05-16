@@ -16,4 +16,6 @@ int contanos(struct no *raiz);
 
 struct no *insereno(struct no *raiz, int valor);
 
+int altura(struct no *raiz);
+
 #endif

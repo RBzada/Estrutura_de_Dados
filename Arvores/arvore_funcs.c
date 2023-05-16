@@ -46,3 +46,20 @@ struct no *insereno(struct no *raiz, int valor){
 
     return (raiz);
 }
+
+int altura(struct no *raiz){
+    int a, b;
+
+    if (!raiz || ((raiz->esq == 0) && (raiz->dir == 0))){
+        return 0;
+    }
+    else{
+        a = altura(raiz->esq);
+        b = altura(raiz->dir);
+        
+        if(a > b){
+            return (a + 1);
+        }
+        else return (b + 1);
+    }
+}
